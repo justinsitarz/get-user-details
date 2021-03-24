@@ -48,21 +48,23 @@ def get_user_details(username):
     user_schedules = get_schedules(username)
     user_escalations = get_escalations(username)
 
-    user_contacts = user_data['userContacts']
+    user_contacts = user_data.get('userContacts')
     user_email = []
     user_mobile = []
     user_sms = []
     user_voice = []
 
-    for u in user_contacts:
-        if u['contactMethod'] == 'email':
-            user_email.append(u['to'])
-        if u['contactMethod'] == 'mobile':
-            user_mobile.append(u['to'])
-        if u['contactMethod'] == 'sms':
-            user_sms.append(u['to'])
-        if u['contactMethod'] == 'voice':
-            user_voice.append(u['to'])
+    if user_contacts:
+
+        for u in user_contacts:
+            if u['contactMethod'] == 'email':
+                user_email.append(u['to'])
+            if u['contactMethod'] == 'mobile':
+                user_mobile.append(u['to'])
+            if u['contactMethod'] == 'sms':
+                user_sms.append(u['to'])
+            if u['contactMethod'] == 'voice':
+                user_voice.append(u['to'])
 
     user['full_name'] = user_data['fullName']
     user['username'] = user_data['username']
@@ -112,7 +114,7 @@ def get_escalations(username):
 def generate_csv(user):
     df = pd.DataFrame(user)
     df_transposed = df.transpose()
-    df_transposed.to_csv(user_data_csv, sep='\t', encoding='utf-8')
+    df_transposed.to_csv(user_data_csv, sep=',', encoding='utf-8')
 
 users = build_user_list(api_key, get_user_url, api_headers)
 get_user_data(users)
