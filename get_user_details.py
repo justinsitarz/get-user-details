@@ -4,7 +4,7 @@ import json
 import pandas as pd
 import sys
 
-api_key = '<your api key>'
+api_key = '8790b795-e6cd-4f5b-9515-5592639c5ced'
 user_data_csv = './user-list.csv' # set this to your desired path or leave the same to generate csv in same directory
 api_headers = {'Content-Type': 'application/json','Authorization':'GenieKey ' + api_key}
 get_user_url = "https://api.opsgenie.com/v2/users/" # set as https://api.eu.opsgenie.com/v2/users/ if account is in the EU region
@@ -12,7 +12,13 @@ expand_params = {'expand': 'contact'}
 
 
 def build_user_list(api_key, url, api_headers):
-    user_list_request = requests.get(url = get_user_url, headers = api_headers)
+
+    try:
+        user_list_request = requests.get(url = get_user_url, headers = api_headers)
+        user_list_request.raise_for_status()
+    except requests.exceptions.RequestException as e:  # This is the correct syntax
+        raise SystemExit(e)
+
     user_json = json.loads(user_list_request.text) 
     users = []
     
