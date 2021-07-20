@@ -1,5 +1,0 @@
-,full_name,username,time_zone,locale,verified,user_id,user_role,created_date,email,mobile,sms,voice,teams,schedules,escalations
-cdegidio@atlassian.com,Christopher Degidio,cdegidio@atlassian.com,America/New_York,en_US,True,9aa27906-748b-4224-95a5-cde8f2c2306f,Owner,2021-05-11T22:02:54.086Z,cdegidio@atlassian.com,,,,,,
-jsitarz@atlassian.com,Justin Sitarz,jsitarz@atlassian.com,America/Chicago,en_US,True,35b4067a-e9fc-4a19-a936-1ed60748f8db,Owner,2020-11-16T08:45:01.728Z,,"jPhone 2.3 - iPhone12,8 14.4 - v3.4.5",1-5555555555,1-5555555555,Omicron Persei 8,"Omicron Persei 8_schedule, Primary","Primary_escalation, Omicron Persei 8_escalation"
-justinsitarz+514@gmail.com,Justin Sitarz,justinsitarz+514@gmail.com,America/Chicago,en_US,True,d4c570ec-c982-4701-b4fe-9d9b1c0873e9,test,2021-05-14T13:00:21.184Z,justinsitarz+514@gmail.com,,,,,,
-justinsitarz+pe-test@gmail.com,Justin PE Test 1,justinsitarz+pe-test@gmail.com,America/Chicago,en_US,True,9a4108b5-1b31-4b24-b7b2-15f57a44fbda,Admin,2021-03-24T16:39:37.157Z,justinsitarz+pe-test@gmail.com,,,,,Primary,Primary_escalation
