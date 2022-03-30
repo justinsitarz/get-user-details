@@ -2,10 +2,6 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-notify:
-  webhooks:
-    - url: https://api.opsgenie.com/v1/json/circleci?apiKey=2f61ce9d-2d67-4ffc-a466-3fb89f0fdb25
-
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -22,6 +18,8 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+      - opsgenie/notify:
+          endpoint: https://api.opsgenie.com/v1/json/circleci?apiKey=2f61ce9d-2d67-4ffc-a466-3fb89f0fdb25 
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -29,3 +27,5 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+
+
