@@ -19,8 +19,7 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-      - opsgenie/notify:
-          endpoint:
+      - opsgenie/notify
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
