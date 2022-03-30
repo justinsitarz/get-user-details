@@ -4,7 +4,7 @@ import json
 import pandas as pd
 import sys
 
-api_key = '' # requires 'Configuration Access' and 'Read' rights
+api_key = '' # requires 'Configuration Access' and 'Read' API key rights
 user_data_csv = './user-list.csv' # set this to your desired path or leave the same to generate csv in same directory
 api_headers = {'Content-Type': 'application/json','Authorization':'GenieKey ' + api_key}
 get_user_url = "https://api.opsgenie.com/v2/users/" # set as https://api.eu.opsgenie.com/v2/users/ if account is in the EU region
